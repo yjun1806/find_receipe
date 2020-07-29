@@ -1,0 +1,435 @@
+resnet50 모델 학습을 시작합니다.
+설정값		Epoch : 1	배치크기 : 128
+
+----------------------------------------------------------------
+이미지 분포 그래프가 저장되었습니다.
+저장 경로 : /home/kunde/DeepCNN/resnet50_Results/
+분포 그래프 파일 명 : distribution_of_images_20190816150217
+----------------------------------------------------------------
+
+학습 모드 : GPU
+
+          category  n_train  n_valid  n_test
+11      013.garlic      364      104      53
+1   014.greenonion      308       88      44
+3      021.paprika      298       85      43
+9        006.chili      249       71      36
+24       002.apple      242       69      34
+
+           category  n_train  n_valid  n_test
+16  022.perillaleaf       82       23      11
+7        010.daikon       81       23      11
+6         018.laver       59       17       8
+15      005.chicken       58       17       8
+0      012.eggplant       46       12       6
+
+torch.Size([128, 3, 224, 224]) , torch.Size([128])
+카테고리 수 : 30
+ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (4): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (5): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=2048, out_features=1000, bias=True)
+)
+Sequential(
+  (0): Linear(in_features=2048, out_features=30, bias=True)
+  (1): LogSoftmax()
+)
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1        [128, 64, 112, 112]           9,408
+       BatchNorm2d-2        [128, 64, 112, 112]             128
+              ReLU-3        [128, 64, 112, 112]               0
+         MaxPool2d-4          [128, 64, 56, 56]               0
+            Conv2d-5          [128, 64, 56, 56]           4,096
+       BatchNorm2d-6          [128, 64, 56, 56]             128
+              ReLU-7          [128, 64, 56, 56]               0
+            Conv2d-8          [128, 64, 56, 56]          36,864
+       BatchNorm2d-9          [128, 64, 56, 56]             128
+             ReLU-10          [128, 64, 56, 56]               0
+           Conv2d-11         [128, 256, 56, 56]          16,384
+      BatchNorm2d-12         [128, 256, 56, 56]             512
+           Conv2d-13         [128, 256, 56, 56]          16,384
+      BatchNorm2d-14         [128, 256, 56, 56]             512
+             ReLU-15         [128, 256, 56, 56]               0
+       Bottleneck-16         [128, 256, 56, 56]               0
+           Conv2d-17          [128, 64, 56, 56]          16,384
+      BatchNorm2d-18          [128, 64, 56, 56]             128
+             ReLU-19          [128, 64, 56, 56]               0
+           Conv2d-20          [128, 64, 56, 56]          36,864
+      BatchNorm2d-21          [128, 64, 56, 56]             128
+             ReLU-22          [128, 64, 56, 56]               0
+           Conv2d-23         [128, 256, 56, 56]          16,384
+      BatchNorm2d-24         [128, 256, 56, 56]             512
+             ReLU-25         [128, 256, 56, 56]               0
+       Bottleneck-26         [128, 256, 56, 56]               0
+           Conv2d-27          [128, 64, 56, 56]          16,384
+      BatchNorm2d-28          [128, 64, 56, 56]             128
+             ReLU-29          [128, 64, 56, 56]               0
+           Conv2d-30          [128, 64, 56, 56]          36,864
+      BatchNorm2d-31          [128, 64, 56, 56]             128
+             ReLU-32          [128, 64, 56, 56]               0
+           Conv2d-33         [128, 256, 56, 56]          16,384
+      BatchNorm2d-34         [128, 256, 56, 56]             512
+             ReLU-35         [128, 256, 56, 56]               0
+       Bottleneck-36         [128, 256, 56, 56]               0
+           Conv2d-37         [128, 128, 56, 56]          32,768
+      BatchNorm2d-38         [128, 128, 56, 56]             256
+             ReLU-39         [128, 128, 56, 56]               0
+           Conv2d-40         [128, 128, 28, 28]         147,456
+      BatchNorm2d-41         [128, 128, 28, 28]             256
+             ReLU-42         [128, 128, 28, 28]               0
+           Conv2d-43         [128, 512, 28, 28]          65,536
+      BatchNorm2d-44         [128, 512, 28, 28]           1,024
+           Conv2d-45         [128, 512, 28, 28]         131,072
+      BatchNorm2d-46         [128, 512, 28, 28]           1,024
+             ReLU-47         [128, 512, 28, 28]               0
+       Bottleneck-48         [128, 512, 28, 28]               0
+           Conv2d-49         [128, 128, 28, 28]          65,536
+      BatchNorm2d-50         [128, 128, 28, 28]             256
+             ReLU-51         [128, 128, 28, 28]               0
+           Conv2d-52         [128, 128, 28, 28]         147,456
+      BatchNorm2d-53         [128, 128, 28, 28]             256
+             ReLU-54         [128, 128, 28, 28]               0
+           Conv2d-55         [128, 512, 28, 28]          65,536
+      BatchNorm2d-56         [128, 512, 28, 28]           1,024
+             ReLU-57         [128, 512, 28, 28]               0
+       Bottleneck-58         [128, 512, 28, 28]               0
+           Conv2d-59         [128, 128, 28, 28]          65,536
+      BatchNorm2d-60         [128, 128, 28, 28]             256
+             ReLU-61         [128, 128, 28, 28]               0
+           Conv2d-62         [128, 128, 28, 28]         147,456
+      BatchNorm2d-63         [128, 128, 28, 28]             256
+             ReLU-64         [128, 128, 28, 28]               0
+           Conv2d-65         [128, 512, 28, 28]          65,536
+      BatchNorm2d-66         [128, 512, 28, 28]           1,024
+             ReLU-67         [128, 512, 28, 28]               0
+       Bottleneck-68         [128, 512, 28, 28]               0
+           Conv2d-69         [128, 128, 28, 28]          65,536
+      BatchNorm2d-70         [128, 128, 28, 28]             256
+             ReLU-71         [128, 128, 28, 28]               0
+           Conv2d-72         [128, 128, 28, 28]         147,456
+      BatchNorm2d-73         [128, 128, 28, 28]             256
+             ReLU-74         [128, 128, 28, 28]               0
+           Conv2d-75         [128, 512, 28, 28]          65,536
+      BatchNorm2d-76         [128, 512, 28, 28]           1,024
+             ReLU-77         [128, 512, 28, 28]               0
+       Bottleneck-78         [128, 512, 28, 28]               0
+           Conv2d-79         [128, 256, 28, 28]         131,072
+      BatchNorm2d-80         [128, 256, 28, 28]             512
+             ReLU-81         [128, 256, 28, 28]               0
+           Conv2d-82         [128, 256, 14, 14]         589,824
+      BatchNorm2d-83         [128, 256, 14, 14]             512
+             ReLU-84         [128, 256, 14, 14]               0
+           Conv2d-85        [128, 1024, 14, 14]         262,144
+      BatchNorm2d-86        [128, 1024, 14, 14]           2,048
+           Conv2d-87        [128, 1024, 14, 14]         524,288
+      BatchNorm2d-88        [128, 1024, 14, 14]           2,048
+             ReLU-89        [128, 1024, 14, 14]               0
+       Bottleneck-90        [128, 1024, 14, 14]               0
+           Conv2d-91         [128, 256, 14, 14]         262,144
+      BatchNorm2d-92         [128, 256, 14, 14]             512
+             ReLU-93         [128, 256, 14, 14]               0
+           Conv2d-94         [128, 256, 14, 14]         589,824
+      BatchNorm2d-95         [128, 256, 14, 14]             512
+             ReLU-96         [128, 256, 14, 14]               0
+           Conv2d-97        [128, 1024, 14, 14]         262,144
+      BatchNorm2d-98        [128, 1024, 14, 14]           2,048
+             ReLU-99        [128, 1024, 14, 14]               0
+      Bottleneck-100        [128, 1024, 14, 14]               0
+          Conv2d-101         [128, 256, 14, 14]         262,144
+     BatchNorm2d-102         [128, 256, 14, 14]             512
+            ReLU-103         [128, 256, 14, 14]               0
+          Conv2d-104         [128, 256, 14, 14]         589,824
+     BatchNorm2d-105         [128, 256, 14, 14]             512
+            ReLU-106         [128, 256, 14, 14]               0
+          Conv2d-107        [128, 1024, 14, 14]         262,144
+     BatchNorm2d-108        [128, 1024, 14, 14]           2,048
+            ReLU-109        [128, 1024, 14, 14]               0
+      Bottleneck-110        [128, 1024, 14, 14]               0
+          Conv2d-111         [128, 256, 14, 14]         262,144
+     BatchNorm2d-112         [128, 256, 14, 14]             512
+            ReLU-113         [128, 256, 14, 14]               0
+          Conv2d-114         [128, 256, 14, 14]         589,824
+     BatchNorm2d-115         [128, 256, 14, 14]             512
+            ReLU-116         [128, 256, 14, 14]               0
+          Conv2d-117        [128, 1024, 14, 14]         262,144
+     BatchNorm2d-118        [128, 1024, 14, 14]           2,048
+            ReLU-119        [128, 1024, 14, 14]               0
+      Bottleneck-120        [128, 1024, 14, 14]               0
+          Conv2d-121         [128, 256, 14, 14]         262,144
+     BatchNorm2d-122         [128, 256, 14, 14]             512
+            ReLU-123         [128, 256, 14, 14]               0
+          Conv2d-124         [128, 256, 14, 14]         589,824
+     BatchNorm2d-125         [128, 256, 14, 14]             512
+            ReLU-126         [128, 256, 14, 14]               0
+          Conv2d-127        [128, 1024, 14, 14]         262,144
+     BatchNorm2d-128        [128, 1024, 14, 14]           2,048
+            ReLU-129        [128, 1024, 14, 14]               0
+      Bottleneck-130        [128, 1024, 14, 14]               0
+          Conv2d-131         [128, 256, 14, 14]         262,144
+     BatchNorm2d-132         [128, 256, 14, 14]             512
+            ReLU-133         [128, 256, 14, 14]               0
+          Conv2d-134         [128, 256, 14, 14]         589,824
+     BatchNorm2d-135         [128, 256, 14, 14]             512
+            ReLU-136         [128, 256, 14, 14]               0
+          Conv2d-137        [128, 1024, 14, 14]         262,144
+     BatchNorm2d-138        [128, 1024, 14, 14]           2,048
+            ReLU-139        [128, 1024, 14, 14]               0
+      Bottleneck-140        [128, 1024, 14, 14]               0
+          Conv2d-141         [128, 512, 14, 14]         524,288
+     BatchNorm2d-142         [128, 512, 14, 14]           1,024
+            ReLU-143         [128, 512, 14, 14]               0
+          Conv2d-144           [128, 512, 7, 7]       2,359,296
+     BatchNorm2d-145           [128, 512, 7, 7]           1,024
+            ReLU-146           [128, 512, 7, 7]               0
+          Conv2d-147          [128, 2048, 7, 7]       1,048,576
+     BatchNorm2d-148          [128, 2048, 7, 7]           4,096
+          Conv2d-149          [128, 2048, 7, 7]       2,097,152
+     BatchNorm2d-150          [128, 2048, 7, 7]           4,096
+            ReLU-151          [128, 2048, 7, 7]               0
+      Bottleneck-152          [128, 2048, 7, 7]               0
+          Conv2d-153           [128, 512, 7, 7]       1,048,576
+     BatchNorm2d-154           [128, 512, 7, 7]           1,024
+            ReLU-155           [128, 512, 7, 7]               0
+          Conv2d-156           [128, 512, 7, 7]       2,359,296
+     BatchNorm2d-157           [128, 512, 7, 7]           1,024
+            ReLU-158           [128, 512, 7, 7]               0
+          Conv2d-159          [128, 2048, 7, 7]       1,048,576
+     BatchNorm2d-160          [128, 2048, 7, 7]           4,096
+            ReLU-161          [128, 2048, 7, 7]               0
+      Bottleneck-162          [128, 2048, 7, 7]               0
+          Conv2d-163           [128, 512, 7, 7]       1,048,576
+     BatchNorm2d-164           [128, 512, 7, 7]           1,024
+            ReLU-165           [128, 512, 7, 7]               0
+          Conv2d-166           [128, 512, 7, 7]       2,359,296
+     BatchNorm2d-167           [128, 512, 7, 7]           1,024
+            ReLU-168           [128, 512, 7, 7]               0
+          Conv2d-169          [128, 2048, 7, 7]       1,048,576
+     BatchNorm2d-170          [128, 2048, 7, 7]           4,096
+            ReLU-171          [128, 2048, 7, 7]               0
+      Bottleneck-172          [128, 2048, 7, 7]               0
+AdaptiveAvgPool2d-173          [128, 2048, 1, 1]               0
+          Linear-174                  [128, 30]          61,470
+      LogSoftmax-175                  [128, 30]               0
+================================================================
+Total params: 23,569,502
+Trainable params: 61,470
+Non-trainable params: 23,508,032
+----------------------------------------------------------------
+Input size (MB): 73.50
+Forward/backward pass size (MB): 36678.56
+Params size (MB): 89.91
+Estimated Total Size (MB): 36841.97
+----------------------------------------------------------------
+torch.Size([30, 2048])
+torch.Size([30])
+
+
+----------------------------------------------------------------
+학습 시작
+총 1 epochs 학습할 예정입니다.
+----------------------------------------------------------------
+
+ Epoch: 0	학습진행률 : 2.63%	 현재 Epoch에서 걸린 시간 : 0.85s	 Train_Loss : 0.0907	 Train_Acc : 0.04% Epoch: 0	학습진행률 : 5.26%	 현재 Epoch에서 걸린 시간 : 1.66s	 Train_Loss : 0.1777	 Train_Acc : 0.23% Epoch: 0	학습진행률 : 7.89%	 현재 Epoch에서 걸린 시간 : 2.48s	 Train_Loss : 0.2621	 Train_Acc : 0.54% Epoch: 0	학습진행률 : 10.53%	 현재 Epoch에서 걸린 시간 : 3.29s	 Train_Loss : 0.3440	 Train_Acc : 0.85% Epoch: 0	학습진행률 : 13.16%	 현재 Epoch에서 걸린 시간 : 4.11s	 Train_Loss : 0.4247	 Train_Acc : 1.36% Epoch: 0	학습진행률 : 15.79%	 현재 Epoch에서 걸린 시간 : 4.92s	 Train_Loss : 0.4979	 Train_Acc : 1.88% Epoch: 0	학습진행률 : 18.42%	 현재 Epoch에서 걸린 시간 : 5.74s	 Train_Loss : 0.5780	 Train_Acc : 2.45% Epoch: 0	학습진행률 : 21.05%	 현재 Epoch에서 걸린 시간 : 6.56s	 Train_Loss : 0.6495	 Train_Acc : 3.32% Epoch: 0	학습진행률 : 23.68%	 현재 Epoch에서 걸린 시간 : 7.39s	 Train_Loss : 0.7191	 Train_Acc : 4.18% Epoch: 0	학습진행률 : 26.32%	 현재 Epoch에서 걸린 시간 : 8.21s	 Train_Loss : 0.7914	 Train_Acc : 4.99% Epoch: 0	학습진행률 : 28.95%	 현재 Epoch에서 걸린 시간 : 9.03s	 Train_Loss : 0.8594	 Train_Acc : 6.10% Epoch: 0	학습진행률 : 31.58%	 현재 Epoch에서 걸린 시간 : 9.85s	 Train_Loss : 0.9233	 Train_Acc : 7.34% Epoch: 0	학습진행률 : 34.21%	 현재 Epoch에서 걸린 시간 : 10.67s	 Train_Loss : 0.9847	 Train_Acc : 8.51% Epoch: 0	학습진행률 : 36.84%	 현재 Epoch에서 걸린 시간 : 11.49s	 Train_Loss : 1.0460	 Train_Acc : 9.62% Epoch: 0	학습진행률 : 39.47%	 현재 Epoch에서 걸린 시간 : 12.31s	 Train_Loss : 1.1052	 Train_Acc : 10.84% Epoch: 0	학습진행률 : 42.11%	 현재 Epoch에서 걸린 시간 : 13.13s	 Train_Loss : 1.1615	 Train_Acc : 12.30% Epoch: 0	학습진행률 : 44.74%	 현재 Epoch에서 걸린 시간 : 13.96s	 Train_Loss : 1.2159	 Train_Acc : 13.89% Epoch: 0	학습진행률 : 47.37%	 현재 Epoch에서 걸린 시간 : 14.78s	 Train_Loss : 1.2693	 Train_Acc : 15.31% Epoch: 0	학습진행률 : 50.00%	 현재 Epoch에서 걸린 시간 : 15.61s	 Train_Loss : 1.3227	 Train_Acc : 16.84% Epoch: 0	학습진행률 : 52.63%	 현재 Epoch에서 걸린 시간 : 16.43s	 Train_Loss : 1.3698	 Train_Acc : 18.36% Epoch: 0	학습진행률 : 55.26%	 현재 Epoch에서 걸린 시간 : 17.24s	 Train_Loss : 1.4170	 Train_Acc : 19.93% Epoch: 0	학습진행률 : 57.89%	 현재 Epoch에서 걸린 시간 : 18.06s	 Train_Loss : 1.4701	 Train_Acc : 21.27% Epoch: 0	학습진행률 : 60.53%	 현재 Epoch에서 걸린 시간 : 18.88s	 Train_Loss : 1.5164	 Train_Acc : 23.02% Epoch: 0	학습진행률 : 63.16%	 현재 Epoch에서 걸린 시간 : 19.70s	 Train_Loss : 1.5668	 Train_Acc : 24.30% Epoch: 0	학습진행률 : 65.79%	 현재 Epoch에서 걸린 시간 : 20.52s	 Train_Loss : 1.6133	 Train_Acc : 25.80% Epoch: 0	학습진행률 : 68.42%	 현재 Epoch에서 걸린 시간 : 21.34s	 Train_Loss : 1.6582	 Train_Acc : 27.37% Epoch: 0	학습진행률 : 71.05%	 현재 Epoch에서 걸린 시간 : 22.16s	 Train_Loss : 1.7004	 Train_Acc : 29.10% Epoch: 0	학습진행률 : 73.68%	 현재 Epoch에서 걸린 시간 : 22.98s	 Train_Loss : 1.7408	 Train_Acc : 30.92% Epoch: 0	학습진행률 : 76.32%	 현재 Epoch에서 걸린 시간 : 23.80s	 Train_Loss : 1.7801	 Train_Acc : 32.75% Epoch: 0	학습진행률 : 78.95%	 현재 Epoch에서 걸린 시간 : 24.62s	 Train_Loss : 1.8215	 Train_Acc : 34.36% Epoch: 0	학습진행률 : 81.58%	 현재 Epoch에서 걸린 시간 : 25.43s	 Train_Loss : 1.8602	 Train_Acc : 36.17% Epoch: 0	학습진행률 : 84.21%	 현재 Epoch에서 걸린 시간 : 26.26s	 Train_Loss : 1.8970	 Train_Acc : 38.03% Epoch: 0	학습진행률 : 86.84%	 현재 Epoch에서 걸린 시간 : 27.08s	 Train_Loss : 1.9365	 Train_Acc : 39.74% Epoch: 0	학습진행률 : 89.47%	 현재 Epoch에서 걸린 시간 : 27.91s	 Train_Loss : 1.9750	 Train_Acc : 41.45% Epoch: 0	학습진행률 : 92.11%	 현재 Epoch에서 걸린 시간 : 28.73s	 Train_Loss : 2.0110	 Train_Acc : 43.30% Epoch: 0	학습진행률 : 94.74%	 현재 Epoch에서 걸린 시간 : 29.55s	 Train_Loss : 2.0449	 Train_Acc : 45.28% Epoch: 0	학습진행률 : 97.37%	 현재 Epoch에서 걸린 시간 : 30.37s	 Train_Loss : 2.0822	 Train_Acc : 47.03% Epoch: 0	학습진행률 : 100.00%	 현재 Epoch에서 걸린 시간 : 31.11s	 Train_Loss : 2.1138	 Train_Acc : 48.76%
+ 			평가진행률 : 9.09%	 현재 Epoch에서 걸린 시간 : 0.79s	 Vaild_Loss : 0.1340	 Vaild_Acc : 5.73% 			평가진행률 : 18.18%	 현재 Epoch에서 걸린 시간 : 1.58s	 Vaild_Loss : 0.2696	 Vaild_Acc : 11.46% 			평가진행률 : 27.27%	 현재 Epoch에서 걸린 시간 : 2.37s	 Vaild_Loss : 0.3825	 Vaild_Acc : 18.13% 			평가진행률 : 36.36%	 현재 Epoch에서 걸린 시간 : 3.16s	 Vaild_Loss : 0.5118	 Vaild_Acc : 24.37% 			평가진행률 : 45.45%	 현재 Epoch에서 걸린 시간 : 3.94s	 Vaild_Loss : 0.6340	 Vaild_Acc : 30.82% 			평가진행률 : 54.55%	 현재 Epoch에서 걸린 시간 : 4.72s	 Vaild_Loss : 0.7607	 Vaild_Acc : 36.91% 			평가진행률 : 63.64%	 현재 Epoch에서 걸린 시간 : 5.51s	 Vaild_Loss : 0.8835	 Vaild_Acc : 43.15% 			평가진행률 : 72.73%	 현재 Epoch에서 걸린 시간 : 6.30s	 Vaild_Loss : 1.0082	 Vaild_Acc : 49.60% 			평가진행률 : 81.82%	 현재 Epoch에서 걸린 시간 : 7.09s	 Vaild_Loss : 1.1308	 Vaild_Acc : 56.06% 			평가진행률 : 90.91%	 현재 Epoch에서 걸린 시간 : 7.89s	 Vaild_Loss : 1.2592	 Vaild_Acc : 61.71% 			평가진행률 : 100.00%	 현재 Epoch에서 걸린 시간 : 8.48s	 Vaild_Loss : 1.3555	 Vaild_Acc : 66.93%
+			현재 Epochs에서 Train과 Vaild에 걸린 시간 : 39.60s
+
+----------------------------------------------------------------
+학습 결과
+
+최상의 epoch 수: 0 (loss: 1.36, acc: 66.93%)
+[ 총 학습시간 : 39.60s, Epoch당 평균 학습 시간 : 39.60s ]
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Training, Validation의 Loss와 Accuracy 그래프가 저장되었습니다.
+저장 경로 : /home/kunde/DeepCNN/resnet50_Results/
+Loss 파일 명 : loss_20190816150304
+Acc 파일 명 : acc_20190816150304
+----------------------------------------------------------------
+
+학습된 모델이 저장되었습니다.
+
+----------------------------------------------------------------
+학습 이미지 수에 따른 Top1, Top5 정확도 그래프가 저장되었습니다.
+저장 경로 : /home/kunde/DeepCNN/resnet50_Results/
+Top1 파일 명 : number_of_image_top1_20190816150309
+Top5 파일 명 : number_of_image_top5_20190816150309
+----------------------------------------------------------------
+
+Final test cross entropy per image = 1.2233.
+Final test top 1 weighted accuracy = 72.20%
+Final test top 5 weighted accuracy = 95.63%

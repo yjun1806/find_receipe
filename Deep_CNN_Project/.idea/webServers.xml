@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="af1c8336-a921-4e4a-b531-a7d676d69e72" name="kunde" url="http://kunde9999.iptime.org">
+        <fileTransfer host="kunde9999.iptime.org" port="10005" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="10005" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

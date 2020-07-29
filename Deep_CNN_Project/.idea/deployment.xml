@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="kunde@kunde9999.iptime.org:10005">
+    <serverData>
+      <paths name="flask">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="kunde">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/kunde/DeepCNN" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="kunde@kunde9999.iptime.org:10005">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/kunde/DeepCNN" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
