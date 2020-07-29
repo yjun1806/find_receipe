@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="flask" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="flask">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/kunde/Capstone_Project" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="kunde@kunde9999.iptime.org:10005">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/kunde/Capstone_Project" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

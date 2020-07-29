@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">kunde9999.iptime.org</domain>
+        <domain includeSubdomains="true">www.10000recipe.com</domain>
+        <domain includeSubdomains="true">recipe1.ezmember.co.kr</domain>
+        <domain includeSubdomains="true">m.10000recipe.com</domain>
+    </domain-config>
+</network-security-config>
